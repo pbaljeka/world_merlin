@@ -1,4 +1,4 @@
-# merlin_festvox
+# world_merlin
 To build a new voice with the merlin toolkit and using the clustegen's question set:
 ###Simple Steps:
 ####0. Copy this folder into the FESTVOXDIR/src/world_merlin
