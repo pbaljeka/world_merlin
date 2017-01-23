@@ -1,19 +1,20 @@
 # merlin_festvox
 To build a new voice with the merlin toolkit and using the clustegen's question set:
-###Steps:
+###Simple Steps:
+####0. Copy this folder into the FESTVOXDIR/src/world_merlin
+
 ####1. Setup environment variables:
 ```bash
 export ESTDIR=/path/to/speech_tools
 export FESTVOXDIR=/path/to/festvox
 export SPTKDIR=/path/to/SPTK
-export WORLD=/path/to/WORLD_vocoder
 ```
 ####2. Make a new voice directory and set up the initial directory structure
 ```bash
 mkdir <institute>_<lexicon>_<voicename>
 example: mkdir cmu_us_pnb
 cd cmu_us_pnb
-$FESTVOXDIR/src/merlin_festvox/setup_merlin_world_voice cmu us pnb
+$FESTVOXDIR/src/world_merlin/setup_world_merlin cmu us pnb
 ```
 ####3. Copy the transcript in the festival format:
 ```bash
@@ -38,15 +39,32 @@ Remove middle silences:
 ./bin/prune_middle_silence wav/*.wav
 ```
 
-6. Dump aligned WORLD feats with CLUSTERGEN's features:
+####6. Run the voice building script.
 ```bash
-./bin/dump_aligned_world_feats
+./bin/build_merlin_world_voice
 ```
 
-7. Convert festival's dumped features to binary format required by Merlin.
+#####Note the last step in the above script assumes the default location of trained neural network model and its name.  
+
+### Steps in build_merlin_world_voice:-Continue after step 5 above.
+####6. Dump aligned WORLD feats with CLUSTERGEN's features:
 ```bash
+./bin/dump_world_feats
 ```
 
-8. Train the model
-9. Resynthesize
-10. Caluclate MCD
+####7. Make train/test/val splits.
+```bash
+./bin/make_file_id_list.sh `pwd`  
+```
+####8. Setup the configuration file
+```bash
+./bin/setup_conf.sh ss_dnn/feed_forward_dnn_WORLD_template.conf
+```
+####9. Train DNN
+```bash
+python ss_dnn/merlin_scripts/src/run_dnn.py ss_dnn/feed_forward_dnn_WORLD.conf
+```
+####10. Resynthesize wavefiles
+```bash
+./bin/merlin_resynthesis.sh $model_directory
+```

@@ -3,7 +3,7 @@
 
 # tools directory
 #world="/home/pbaljeka/Merlin/merlin/tools/bin/WORLD"
-world=$FESTVOXDIR/src/wrold_merlin/WORLD
+world=$FESTVOXDIR/src/world_merlin/WORLD
 sptk=$SPTKDIR/bin
 # input audio directory
 #out_dir=`pwd`/gen/DNN__mgc_lf0_vuv_bap_1_917_711_199_6_1024

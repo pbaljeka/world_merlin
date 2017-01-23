@@ -50,8 +50,9 @@ CURRENT_DIR=`pwd`
 #Do merlin pipeline
 python ss_dnn/merlin_scripts/src/run_dnn.py ss_dnn/feed_forward_dnn_WORLD.conf
 
+MODEL_NAME="DNN__mgc_lf0_vuv_bap_1_80_711_199_6_1024"
 #Resynthesize the wavfiles
-./bin/merlin_resynthesis.sh $MODEL_DIR
+./bin/merlin_resynthesis.sh ss_dnn/gen/$MODEL_NAME
 
 
 
