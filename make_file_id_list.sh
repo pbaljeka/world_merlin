@@ -16,5 +16,5 @@ VAL_FILES=`cat vallist |wc -l`
 TEST_FILES=`cat testlist |wc -l`
 
 rm *list
-echo  $TRAIN_FILES%%$VAL_FILES%%$TEST_FILES>etc/trainvaltest
+echo  $TRAIN_FILES%$VAL_FILES%$TEST_FILES>etc/trainvaltest
 

@@ -193,6 +193,7 @@ cp -p $WERLINDIR/build_merlin_world_voice bin
 cp -p $WERLINDIR/dump_world_feats bin
 cp -p $WERLINDIR/get_bin_dim.py bin
 cp -p $WERLINDIR/extract_features_for_merlin.sh bin
+cp -p $WERLINDIR/make_file_id_list.sh bin
 cp -p $WERLINDIR/merlin_resynthesis.sh bin
 cp -p $WERLINDIR/setup_conf.sh bin
 

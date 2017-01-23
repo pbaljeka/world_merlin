@@ -19,13 +19,16 @@ fi
 conf_file=$1
 
 CURRENT_DIR=`pwd`
-LAB_DIM=`basename ${CURRENT_DIR}/ss_dnn/data/binary_label*|cut -d '_' -f3`
-TRAIN_FILES=`cat etc/trainvaltest|cut -d '%%' -f1`
-VAL_FILES=`cat etc/trainvaltest|cut -d '%%' -f2`
-TEST_FILES=`cat etc/trainvaltest|cut -d '%%' -f3`
+LAB_DIR=`echo ss_dnn/data/binary_label*`
+LAB_DIM=`basename ${LAB_DIR}|cut -d '_' -f3`
+TRAIN_FILES=`cat etc/trainvaltest|cut -d '%' -f1`
+VAL_FILES=`cat etc/trainvaltest|cut -d '%' -f2`
+TEST_FILES=`cat etc/trainvaltest|cut -d '%' -f3`
 echo $CURRENT_DIR
+echo $LAB_DIR
 echo $LAB_DIM
 echo $TRAIN_FILES, $VAL_FILES, $TEST_FILES
+
 cat ${conf_file}|
 sed 's+$SPTKDIR+'"${SPTKDIR}"'+g'|
 sed 's+$FESTVOXDIR+'"${FESTVOXDIR}"'+g'|
