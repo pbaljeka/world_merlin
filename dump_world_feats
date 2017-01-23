@@ -59,6 +59,6 @@ echo "Dumping aligned linguistic and WORLD feats in festival/coeffs"
 
 # Dump Binary feats
 echo "Converting dumped linguistic feats to binary in ss_dnn/data/binary_label_LAB_DIM"
-./bin/make_bin_feats
+./bin/make_bin_feats.sh
 echo "Converting dumped WORLD feats to binary in ss_dnn/data/{MGC,BAP,LF0}"
-./bin/make_bin_world_feats
+./bin/make_world_bin_feats.sh

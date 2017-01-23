@@ -3,8 +3,8 @@
 # top merlin directory
 
 # tools directory
-world="/home/pbaljeka/Merlin/merlin/tools/WORLD_v2/bin/"
-sptk="/home/pbaljeka/Merlin/merlin/tools/bin/SPTK-3.9"
+world=$FESTVOXDIR/src/world_merlin/WORLD
+sptk=$SPTKDIR/bin
 
 # input audio directory
 wav_dir=`pwd`/wav

@@ -43,4 +43,4 @@ for i in festival/coeffs/*.mcep;
    mkdir ss_dnn/data/ref_data2
    cp ss_dnn/data/mgc/* ss_dnn/data/ref_data2
    cp ss_dnn/data/bap/* ss_dnn/data/ref_data2
-   cp ss_dnn_data/lf0/* ss_dnn/data/ref_data2
+   cp ss_dnn/data/lf0/* ss_dnn/data/ref_data2
