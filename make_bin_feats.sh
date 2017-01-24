@@ -8,7 +8,7 @@ rm -rf ${SOURCE_DIR}
 
 mkdir -p ${SOURCE_DIR}
 
-for i in festival/coeffs_tbd/*.feats;
+for i in festival/coeffs/*.feats;
     do
     echo $i
     f=`basename $i|cut -d '.' -f1`
