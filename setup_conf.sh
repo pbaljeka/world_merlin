@@ -27,7 +27,7 @@ PHONELIST=festival/clunits/phonenames
 STATELIST=festival/clunits/statenames
 
 featfile=`cat etc/txt.done.data|awk '{print $2}'|head -1`
-LAB_DIM=`python bin/get_bin_dim.py $SOURCE_DIR/${featfile}.lab $PHONELIST $STATELIST`
+LAB_DIM=`python bin/get_bin_dim.py festival/coeffs/${featfile}.feats $PHONELIST $STATELIST`
 
 echo $LAB_DIM
 echo $TRAIN_FILES, $VAL_FILES, $TEST_FILES
