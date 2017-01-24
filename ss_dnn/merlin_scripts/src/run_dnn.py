@@ -759,7 +759,13 @@ def main_function(cfg):
     nnets_file_name = '%s/%s_%s_%d_%s_%d.%d.train.%d.model' \
                       %(model_dir, cfg.model_type, cfg.combined_feature_name, int(cfg.multistream_switch),
                         combined_model_arch, lab_dim, cfg.cmp_dim, int(cfg.train_file_number))
-
+    gen_model_file_name = '%s_%s_%d_%d_%d_%d_%d_%d' \
+                      %(cfg.model_type, cfg.combined_feature_name, int(1),
+                        int(cfg.train_file_number), lab_dim, cfg.cmp_dim,int(len(hidden_layers_sizes)), int(hid_size))
+    with open('etc/nnet_model_name', 'w') as nnMfile:
+        nnMfile.write(nnets_file_name)
+    with open('etc/gen_model_file_name', 'w') as genMfile:
+        genMfile.write(gen_model_file_name)
     ### DNN model training
     if cfg.TRAINDNN:
 
@@ -840,7 +846,7 @@ def main_function(cfg):
         else:
             logger.critical('denormalising method %s is not supported!\n' %(cfg.output_feature_normalisation))
             raise
-
+        print gen_file_list
         ##perform MLPG to smooth parameter trajectory
         ## lf0 is included, the output features much have vuv.
         generator = ParameterGeneration(gen_wav_features = cfg.gen_wav_features)
