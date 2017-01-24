@@ -16,6 +16,11 @@ example: mkdir cmu_us_pnb
 cd cmu_us_pnb
 $FESTVOXDIR/src/world_merlin/setup_world_merlin cmu us pnb
 ```
+#### For Indic languages do:
+```bash
+$FESTVOXDIR/src/world_merlin/setup_world_merlin_indic cmu indic <lang> pnb
+```
+#### where lang is any of asm ben guj hin kan mar pan raj tam tel
 ####3. Copy the transcript in the festival format:
 ```bash
 cp <TRANSCRIPT_DIR>/txt.done.data etc/txt.done.data
@@ -36,7 +41,7 @@ Remove trailing and leading silences:
 ```
 Remove middle silences:
 ```bash
-./bin/prune_middle_silence wav/*.wav
+./bin/prune_middle_silences wav/*.wav
 ```
 
 ####6. Run the voice building script.
