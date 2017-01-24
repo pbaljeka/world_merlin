@@ -71,5 +71,6 @@ python ss_dnn/merlin_scripts/src/run_dnn.py ss_dnn/feed_forward_dnn_WORLD.conf
 ```
 ####10. Resynthesize wavefiles
 ```bash
-./bin/merlin_resynthesis.sh $model_directory
+MODEL_NAME=`cat etc/gen_model_file_name`
+./bin/merlin_resynthesis.sh ss_dnn/gen/$MODEL_NAME
 ```
