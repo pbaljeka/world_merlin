@@ -8,7 +8,7 @@ sptk=$SPTKDIR/bin
 # input audio directory
 #out_dir=`pwd`/gen/DNN__mgc_lf0_vuv_bap_1_917_711_199_6_1024
 MODEL_DIR=$1
-out_dir=I`pwd`/ss_dnn/gen/$MODEL_DIR
+out_dir=`pwd`/$MODEL_DIR
 # Output features directory
 #out_dir=`pwd`/syn_world
 
