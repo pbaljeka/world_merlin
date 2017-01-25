@@ -8,6 +8,10 @@ To build a new voice with the merlin toolkit and using the clustegen's question 
 export ESTDIR=/path/to/speech_tools
 export FESTVOXDIR=/path/to/festvox
 export SPTKDIR=/path/to/SPTK
+THEANO_FLAGS="floatX=float32"
+export THEANO_FLAGS
+PYTHONPATH=:/usr/lib/python2.7/dist-packages
+export PYTHONPATH
 ```
 ####2. Make a new voice directory and set up the initial directory structure
 ```bash
